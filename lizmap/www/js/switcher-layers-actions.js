@@ -65,8 +65,8 @@ var lizLayerActionButtons = function() {
             metadatas = {
                 title: layerConfig.title,
                 type: layerConfig.type,
-                abstract: null,
-                link: null,
+                abstract: layerConfig.abstract,
+                link: layerConfig.link,
                 isBaselayer: false
             };
             if(layerConfig.abstract &&  layerConfig.abstract)
@@ -75,9 +75,9 @@ var lizLayerActionButtons = function() {
                 metadatas.link = layerConfig.link
         }
         if( lizMap.map.baseLayer && lizMap.map.baseLayer.name == aName ){
-            metadatas.abstract = metadatas.title;
+            metadatas.abstract = metadatas.abstract;
             metadatas.type = 'layer';
-            metadatas.link = null;
+            metadatas.link = layerConfig.link;
             metadatas.isBaselayer = true;
         }
 
